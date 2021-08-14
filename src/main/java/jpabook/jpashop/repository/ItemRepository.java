@@ -18,6 +18,7 @@ public class ItemRepository {
             em.persist(item);   //id는 jpa에 저장하기 전까지 id값이 없으므로 null 체크 진행
         } else {
             em.merge(item); //update와 비슷 | 이미 id값이 있음
+            //item은 영속 상태로 변하지 않고, returnItem만 영속성 컨텍스트로 관리된다.
         }
     }
 
